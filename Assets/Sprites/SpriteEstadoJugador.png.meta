@@ -1,0 +1,365 @@
+fileFormatVersion: 2
+guid: a6572447b9c7edf4f84d26b36c4aed97
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3669704205345428117
+    second: SpriteEstadoJugador_0
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: SpriteEstadoJugador_1
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 252
+        width: 103
+        height: 143
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: 29.5, y: -69.5}
+        - {x: 40.5, y: -69.5}
+        - {x: 42.5, y: -67.5}
+        - {x: 42.5, y: -63.5}
+        - {x: 45.5, y: -63.5}
+        - {x: 47.5, y: -61.5}
+        - {x: 47.5, y: -57.5}
+        - {x: 51.5, y: -57.5}
+        - {x: 51.5, y: -47.5}
+        - {x: 47.5, y: -47.5}
+        - {x: 47.5, y: -39.5}
+        - {x: 51.5, y: -39.5}
+        - {x: 51.5, y: -11.5}
+        - {x: 29.5, y: -11.5}
+        - {x: 29.5, y: -3.5}
+        - {x: 34.5, y: -3.5}
+        - {x: 36.5, y: -1.5}
+        - {x: 36.5, y: 2.5}
+        - {x: 40.5, y: 2.5}
+        - {x: 42.5, y: 4.5}
+        - {x: 42.5, y: 52.5}
+        - {x: 40.5, y: 54.5}
+        - {x: 36.5, y: 54.5}
+        - {x: 36.5, y: 58.5}
+        - {x: 34.5, y: 60.5}
+        - {x: 30.5, y: 60.5}
+        - {x: 30.5, y: 64.5}
+        - {x: 28.5, y: 66.5}
+        - {x: 24.5, y: 66.5}
+        - {x: 24.5, y: 71.5}
+        - {x: -23.5, y: 71.5}
+        - {x: -23.5, y: 66.5}
+        - {x: -27.5, y: 66.5}
+        - {x: -29.5, y: 64.5}
+        - {x: -29.5, y: 60.5}
+        - {x: -33.5, y: 60.5}
+        - {x: -35.5, y: 58.5}
+        - {x: -35.5, y: 54.5}
+        - {x: -39.5, y: 54.5}
+        - {x: -41.5, y: 52.5}
+        - {x: -41.5, y: 12.5}
+        - {x: -44.5, y: 12.5}
+        - {x: -46.5, y: 10.5}
+        - {x: -46.5, y: -29.5}
+        - {x: -51.5, y: -29.5}
+        - {x: -51.5, y: -39.5}
+        - {x: -46.5, y: -39.5}
+        - {x: -46.5, y: -43.5}
+        - {x: -44.5, y: -45.5}
+        - {x: -35.5, y: -45.5}
+        - {x: -35.5, y: -47.5}
+        - {x: -38.5, y: -47.5}
+        - {x: -40.5, y: -49.5}
+        - {x: -40.5, y: -53.5}
+        - {x: -44.5, y: -53.5}
+        - {x: -46.5, y: -55.5}
+        - {x: -46.5, y: -67.5}
+        - {x: -44.5, y: -69.5}
+        - {x: -9.5, y: -69.5}
+        - {x: -7.5, y: -67.5}
+        - {x: -7.5, y: -57.5}
+        - {x: 7.5, y: -57.5}
+        - {x: 7.5, y: -65.5}
+        - {x: 4.5, y: -65.5}
+        - {x: 2.5, y: -66.5}
+        - {x: 1.5, y: -70.5}
+        - {x: 2.5, y: -71.5}
+        - {x: 29.5, y: -71.5}
+      physicsShape: []
+      tessellationDetail: 1
+      bones: []
+      spriteID: 744283d0a846bd24490bdf87cfd89311
+      internalID: -1711842615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteEstadoJugador_2
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 283
+        width: 125
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: -40.5, y: -32}
+        - {x: -33.5, y: -32}
+        - {x: -33.5, y: -36}
+        - {x: 33.5, y: -36}
+        - {x: 33.5, y: -32}
+        - {x: 56.5, y: -32}
+        - {x: 58.5, y: -30}
+        - {x: 58.5, y: -26}
+        - {x: 62.5, y: -26}
+        - {x: 62.5, y: 14}
+        - {x: 58.5, y: 14}
+        - {x: 58.5, y: 24}
+        - {x: 56.5, y: 26}
+        - {x: 52.5, y: 26}
+        - {x: 52.5, y: 30}
+        - {x: 50.5, y: 32}
+        - {x: 46.5, y: 32}
+        - {x: 46.5, y: 36}
+        - {x: -33.5, y: 36}
+        - {x: -33.5, y: 32}
+        - {x: -36.5, y: 32}
+        - {x: -38.5, y: 30}
+        - {x: -38.5, y: 26}
+        - {x: -49.5, y: 26}
+        - {x: -51.5, y: 24}
+        - {x: -51.5, y: 14}
+        - {x: -62.5, y: 14}
+        - {x: -62.5, y: -20}
+        - {x: -59.5, y: -20}
+        - {x: -58.5, y: -24}
+        - {x: -56.5, y: -26}
+        - {x: -52.5, y: -26}
+        - {x: -52.5, y: -28}
+        - {x: -56.5, y: -28}
+        - {x: -58.5, y: -30}
+        - {x: -58.5, y: -36}
+        - {x: -40.5, y: -36}
+      physicsShape: []
+      tessellationDetail: 1
+      bones: []
+      spriteID: 5533705987940bb4fa6725e40325e239
+      internalID: 566236407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteEstadoJugador_0
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 245
+        width: 115
+        height: 152
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: -7.5, y: -65}
+        - {x: -3.5, y: -65}
+        - {x: -1.5, y: -63}
+        - {x: -1.5, y: -53}
+        - {x: 0.5, y: -53}
+        - {x: 0.5, y: -76}
+        - {x: 35.5, y: -76}
+        - {x: 35.5, y: -65}
+        - {x: 39.5, y: -65}
+        - {x: 41.5, y: -63}
+        - {x: 41.5, y: -59}
+        - {x: 45.5, y: -59}
+        - {x: 47.5, y: -57}
+        - {x: 47.5, y: -52}
+        - {x: 51.5, y: -52}
+        - {x: 53.5, y: -50}
+        - {x: 53.5, y: -47}
+        - {x: 57.5, y: -47}
+        - {x: 57.5, y: 5}
+        - {x: 35.5, y: 5}
+        - {x: 35.5, y: 51}
+        - {x: 33.5, y: 53}
+        - {x: 29.5, y: 53}
+        - {x: 29.5, y: 57}
+        - {x: 27.5, y: 59}
+        - {x: 23.5, y: 59}
+        - {x: 23.5, y: 70}
+        - {x: 21.5, y: 72}
+        - {x: 17.5, y: 72}
+        - {x: 17.5, y: 76}
+        - {x: -29.5, y: 76}
+        - {x: -29.5, y: 72}
+        - {x: -33.5, y: 72}
+        - {x: -35.5, y: 70}
+        - {x: -35.5, y: 66}
+        - {x: -39.5, y: 66}
+        - {x: -41.5, y: 64}
+        - {x: -41.5, y: 59}
+        - {x: -45.5, y: 59}
+        - {x: -47.5, y: 57}
+        - {x: -47.5, y: 11}
+        - {x: -51.5, y: 11}
+        - {x: -53.5, y: 9}
+        - {x: -53.5, y: -13}
+        - {x: -57.5, y: -13}
+        - {x: -57.5, y: -47}
+        - {x: -53.5, y: -47}
+        - {x: -53.5, y: -51}
+        - {x: -51.5, y: -53}
+        - {x: -35.5, y: -53}
+        - {x: -35.5, y: -57}
+        - {x: -33.5, y: -59}
+        - {x: -29.5, y: -59}
+        - {x: -29.5, y: -61}
+        - {x: -33.5, y: -61}
+        - {x: -35.5, y: -63}
+        - {x: -35.5, y: -76}
+        - {x: -7.5, y: -76}
+      physicsShape: []
+      tessellationDetail: 1
+      bones: []
+      spriteID: 946cabe2f7d365a4f87057db49f98935
+      internalID: -407035209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 9697cf5ec4b26834d8cec2dbb77fe24a
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      SpriteEstadoJugador_0: -407035209
+      SpriteEstadoJugador_1: -1711842615
+      SpriteEstadoJugador_2: 566236407
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

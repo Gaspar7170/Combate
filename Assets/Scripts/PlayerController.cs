@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     private EnemyController enemy;
     private Vector3 posicionenemigo;
     private bool puedeMoverse = true;
+    private Animator animator;
 
     public GameObject slash;
     public GameObject thrust;
@@ -26,12 +27,14 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>(); 
         //Obtenemos el componente del enemigo para saber de donde nos ataca.
         GameObject enemyObject = GameObject.FindGameObjectWithTag("Enemigo");
         if (enemyObject != null)
         {
             enemy = enemyObject.GetComponent<EnemyController>();
         }
+        animator.SetFloat("vida", vida);
     }
 
 
@@ -143,10 +146,12 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemigo"))
         {
             vida -= 5;
+            animator.SetFloat("vida", vida);
             if (vida <= 0)
             {
-                Destroy(gameObject);
+                GameOver();
             }
+            
         }
         
     }
@@ -157,9 +162,10 @@ public class PlayerController : MonoBehaviour
             Debug.Log("¡El Slash ha golpeado al jugador!");
             MostrarCorazon();
             vida -= 5;
+            animator.SetFloat("vida", vida);
             Knockback();
             if (vida <= 0){
-                Destroy(gameObject);
+                GameOver();
             }
         }
     }
@@ -190,6 +196,10 @@ public class PlayerController : MonoBehaviour
         rb.linearVelocity = Vector2.zero;
         yield return new WaitForSeconds(segundos);
         puedeMoverse = true;
+    }
+
+    void GameOver(){
+        Debug.Log("Game Over");
     }
 
     void Flip(){
