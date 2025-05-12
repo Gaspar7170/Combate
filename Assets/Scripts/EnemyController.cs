@@ -6,8 +6,6 @@ public class EnemyController : MonoBehaviour
 
     public int vida = 20;
 
-    public float velocidad = 3f;
-
     public float espera = 2f;
 
     private bool puedeRecibirGolpe = true;
@@ -36,9 +34,9 @@ public class EnemyController : MonoBehaviour
         if(vida <= 0){
             Destroy(gameObject);
         }
-        
-            
+
     }
+    
     
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -55,9 +53,6 @@ public class EnemyController : MonoBehaviour
             Knockback();
             
             StartCoroutine(Cooldown());
-            
-
-
         }
     }
 
@@ -67,11 +62,12 @@ public class EnemyController : MonoBehaviour
         int numeroAleatorio = Random.Range(0, 2);
         posicionplayer = player.transform.position;
 
-        
+
 
         if (transform.position.x < posicionplayer.x)
         {
             // Ataque desde la derecha
+            
             Vector3 posicionAtaque = transform.position + new Vector3(1.3f, 0f, 0f);
             if(numeroAleatorio == 0){
                 Instantiate(slash, posicionAtaque, Quaternion.Euler(0f,0f,0f));
@@ -83,6 +79,7 @@ public class EnemyController : MonoBehaviour
         else
         {
             // Ataque desde la izquierda
+            
             Vector3 posicionAtaque = transform.position + new Vector3(-1.3f, 0f, 0f);
             if(numeroAleatorio == 0){
                 Instantiate(slash, posicionAtaque, Quaternion.Euler(0f,0f,180f));
@@ -112,12 +109,18 @@ public class EnemyController : MonoBehaviour
         posicionplayer = player.transform.position;
         if (transform.position.x < posicionplayer.x)
         {
-            rb.AddForce(Vector2.left * 1f, ForceMode2D.Impulse);
+            rb.AddForce(Vector2.left * 3f, ForceMode2D.Impulse);
         }
         else
         {
-            rb.AddForce(Vector2.right * 1f, ForceMode2D.Impulse);
+            rb.AddForce(Vector2.right * 3f, ForceMode2D.Impulse);
         }
-        rb.AddForce(Vector2.up * 1f, ForceMode2D.Impulse);
+        rb.AddForce(Vector2.up * 2f, ForceMode2D.Impulse);
+    }
+    void Flip(){
+    // Cambia la escala en el eje X, lo que invierte el sprite visualmente
+    Vector3 escala = transform.localScale;
+    escala.x *= -1;
+    transform.localScale = escala;
     }
 }

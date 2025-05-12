@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour
     public GameObject block;
     public GameObject corazonesRotos;
     public Transform personaje;
+
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -41,6 +42,10 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (vida <= 0)
+        {
+            Destroy(gameObject);
+        }
         //Movimiento Lateral
         if (!puedeMoverse) return;
         if (Input.GetKey(KeyCode.D))
@@ -204,8 +209,11 @@ public class PlayerController : MonoBehaviour
 
     void Flip(){
     // Cambia la escala en el eje X, lo que invierte el sprite visualmente
-    Vector3 localScale = transform.localScale;
-    localScale.x = -localScale.x; // Cambia la dirección (flipa en Y)
-    transform.localScale = localScale;
+    Vector3 escala = transform.localScale;
+    escala.x *= -1;
+    transform.localScale = escala;
+    }
+    public int GetVida(){
+        return vida;
     }
 }
