@@ -6,7 +6,7 @@ public class IASoldadoMelee : MonoBehaviour
     //Atributos Generales
     private Rigidbody2D rb;
     private PlayerController player;
-    private float velocidad = 1.2f;
+    private float velocidad = 1.7f;
 
     //Atributos de SeguimientoIA
     public float radiodeteccion = 5.0f;
@@ -16,10 +16,21 @@ public class IASoldadoMelee : MonoBehaviour
     [SerializeField]private float tiempoEspera = 2f;
     private bool estaEsperando = false;
     private int puntoActual;
+    private float espera = 3f;
 
     //Atributos Compartidos
     private bool mirandoIzquierda = true;
     private bool enemigoDetectado = false;
+
+    //Atributos Ataque
+    
+    private bool atacando = false;
+
+    //Ataques Gameobjects
+    public GameObject slash;
+    public GameObject estocada;
+
+
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -29,6 +40,7 @@ public class IASoldadoMelee : MonoBehaviour
         {
             player = playerObject.GetComponent<PlayerController>();
         }
+        if (transform.rotation.y == 0){mirandoIzquierda = false;}
     }
 
     // Update is called once per frame
@@ -38,7 +50,7 @@ public class IASoldadoMelee : MonoBehaviour
             {
                 // Si el jugador no está presente dejar de buscarlo
                 seguirPlayer();
-                if(!enemigoDetectado){
+                if(!enemigoDetectado && puntosPatrulla.Length > 0){
                     if(transform.position.x != puntosPatrulla[puntoActual].position.x){
                         VerificarDireccionRespectoAlLaPatrulla();
                         transform.position = Vector2.MoveTowards(transform.position, puntosPatrulla[puntoActual].position, velocidad * Time.deltaTime);
@@ -56,7 +68,14 @@ public class IASoldadoMelee : MonoBehaviour
         if (distanciaJugador < radiodeteccion){
             VerificarDireccionRespectoAlJugador();
             enemigoDetectado = true;
+            if (distanciaJugador < 1.8f){
+                StartCoroutine(Cooldown());
+            }
+            if(!atacando)
+            {
             transform.position = Vector2.MoveTowards(transform.position, player.transform.position, velocidad * Time.deltaTime);
+            }
+            
         }
         else{
             enemigoDetectado = false;
@@ -83,6 +102,78 @@ public class IASoldadoMelee : MonoBehaviour
         VerificarDireccionRespectoAlLaPatrulla();
     }
 
+    
+
+
+    //---------------Seccion de Ataque---------------//
+    
+    void Atacar()
+    {
+        
+        int ataqueElegido = Random.Range(1, 2);
+
+
+
+        if (!mirandoIzquierda)
+        {
+            // Ataque desde la derecha
+            switch (ataqueElegido)
+        {
+            case 1:
+                Slash(1);
+                break;
+            case 2:
+                Estocada(1);
+                break;
+        }
+
+        }
+        else
+        {
+            // Ataque desde la izquierda
+            
+            
+            switch (ataqueElegido)
+        {
+            case 1:
+                Slash(-1);
+                break;
+            case 2:
+                Estocada(-1);
+                break;
+        }
+        }
+    }
+
+    //Ataques
+    //Ataque 1 (barrido):
+    //Instantiate(slash, posicionAtaque, Quaternion.Euler(0f,0f,0f));
+    void Slash(int direccion){
+
+        Vector3 posicionAtaque = transform.position + new Vector3(direccion, 0f, 0f);
+        if(direccion == 1)
+        {
+            
+            Instantiate(slash, posicionAtaque, Quaternion.Euler(0f,0f,0f));
+        } 
+        else 
+        {
+            Instantiate(slash, posicionAtaque, Quaternion.Euler(0f,0f,180f));
+        }
+    }
+    //Ataque 2 (estocada):
+    void Estocada(int direccion){
+        Vector3 posicionAtaque = transform.position + new Vector3(direccion, 0f, 0f);
+        if (direccion == 1)
+        {
+            Instantiate(estocada, transform.position * direccion, Quaternion.Euler(0f,0f,0f));
+        }
+        else
+        {
+            Instantiate(estocada, transform.position * direccion, Quaternion.Euler(0f,0f,180f));
+        }
+    }
+
     //Funciones varias utilizadas
 
     void VerificarDireccionRespectoAlLaPatrulla(){
@@ -103,70 +194,18 @@ public class IASoldadoMelee : MonoBehaviour
         escala.x *= -1;
         transform.localScale = escala;
     }
-
-
-    //Seccion de Ataque
-    void Atacar()
-    {
-        
-        int numeroAleatorio = Random.Range(0, 6);
-        posicionplayer = player.transform.position;
-
-
-
-        if (mirandoIzquierda)
-        {
-            // Ataque desde la derecha
-            
-            Vector3 posicionAtaque = transform.position + new Vector3(1.3f, 0f, 0f);
-            if(numeroAleatorio == 0){
-                Instantiate(slash, posicionAtaque, Quaternion.Euler(0f,0f,0f));
-            }
-            else{
-                Instantiate(thrust, posicionAtaque, Quaternion.Euler(0f,0f,0f));
-            }
-        }
-        else
-        {
-            // Ataque desde la izquierda
-            
-            Vector3 posicionAtaque = transform.position + new Vector3(-1.3f, 0f, 0f);
-            if(numeroAleatorio == 0){
-                Instantiate(slash, posicionAtaque, Quaternion.Euler(0f,0f,180f));
-            }
-            else{
-                Instantiate(thrust, posicionAtaque, Quaternion.Euler(0f,0f,180f));
-            }
-        }
-    }
-
-    void MostrarCorazon()
-    {
-        Vector3 posicionCorazon = transform.position + new Vector3(0, 3.5f, 0);
-        GameObject corazon = Instantiate(corazonesRotos, posicionCorazon, Quaternion.identity);
-        Destroy(corazon, 0.3f);  // Destruye el corazón después de 0.3 segundo
-        return;
-    }
+    
     private IEnumerator Cooldown()
     {
-        puedeRecibirGolpe = false;
-        yield return new WaitForSeconds(espera);
-        puedeRecibirGolpe = true;
+        if (!atacando){
+        atacando = true;
         Atacar();
-    }
-    void Knockback(){
-
-        posicionplayer = player.transform.position;
-        if (transform.position.x < posicionplayer.x)
-        {
-            rb.AddForce(Vector2.left * 3f, ForceMode2D.Impulse);
+        yield return new WaitForSeconds(espera);
+        atacando = false;
         }
-        else
-        {
-            rb.AddForce(Vector2.right * 3f, ForceMode2D.Impulse);
-        }
-        rb.AddForce(Vector2.up * 2f, ForceMode2D.Impulse);
     }
+    
+    
 
 
 

@@ -127,7 +127,7 @@ public class PlayerController : MonoBehaviour
     }
     private IEnumerator CooldownBlock()
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(1.5f);
         bloqueando = false;
         puedeatacar = true;
         puedeMoverse = true;
@@ -147,18 +147,6 @@ public class PlayerController : MonoBehaviour
         }
 
         
-
-        if (collision.gameObject.CompareTag("Enemigo"))
-        {
-            vida -= 5;
-            animator.SetFloat("vida", vida);
-            if (vida <= 0)
-            {
-                GameOver();
-            }
-            
-        }
-        
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -167,11 +155,9 @@ public class PlayerController : MonoBehaviour
             Debug.Log("¡El Slash ha golpeado al jugador!");
             MostrarCorazon();
             vida -= 5;
-            animator.SetFloat("vida", vida);
+            
             Knockback();
-            if (vida <= 0){
-                GameOver();
-            }
+            
         }
     }
     void MostrarCorazon()
@@ -203,17 +189,10 @@ public class PlayerController : MonoBehaviour
         puedeMoverse = true;
     }
 
-    void GameOver(){
-        Debug.Log("Game Over");
-    }
-
     void Flip(){
     // Cambia la escala en el eje X, lo que invierte el sprite visualmente
     Vector3 escala = transform.localScale;
     escala.x *= -1;
     transform.localScale = escala;
-    }
-    public int GetVida(){
-        return vida;
     }
 }
